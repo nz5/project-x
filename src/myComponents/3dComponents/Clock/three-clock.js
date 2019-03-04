@@ -38,7 +38,7 @@ export default class ThreeClock extends Component {
 
     render() {
         return (
-            <div className="MyView" id="3clockView">
+            <div  id="3clockView">
             </div>
         );
     }

@@ -7,7 +7,7 @@ export default function initScene(scene, renderer, canvasId) {
   //* Initialize webGL
   // const canvas = document.getElementById(canvasId);
   // const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-  var height = window.innerHeight,
+  var height = window.innerHeight-200,
     width = window.innerWidth;
   // renderer.setSize(width, height);
   renderer.setClearColor(0x282c34);    // set background color
@@ -47,7 +47,7 @@ export default function initScene(scene, renderer, canvasId) {
   scene.add(new THREE.AmbientLight(0xffffff));
   // scene.add(new THREE.AxesHelper(2));
 
-  // let controls = new THREE.TrackballControls(camera, canvas);
+  let controls = new TrackballControls(camera, domElem);
   // let controls2 = new THREE.TrackballControls(camera2, canvas2);
   // const controls3 = new THREE.TrackballControls(camera3, canvas3);
 
@@ -294,7 +294,7 @@ export default function initScene(scene, renderer, canvasId) {
     // camera3.position.y = watch.camera3Offset * Math.cos(watch.stepSecondHand * (second + millis / 1000));
     // camera3.position.x = -watch.camera3Offset * Math.sin(watch.stepSecondHand * (second + millis / 1000));
 
-    // controls.update();
+    controls.update();
     // controls2.update();
     // controls3.update();
     renderer.render(scene, camera);

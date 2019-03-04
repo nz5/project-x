@@ -1,5 +1,6 @@
 .MyView {
   text-align: center;
   background-color: #282c34;
-  min-height: 95vh;
+  min-height: 85vh;
+  /* min-height: 70%; */
 }

@@ -10,7 +10,7 @@ import brandImage from '../pictures/brand.svg'
 
 import MyViewHome from './MyViewHome';
 import MyView3d from './MyView3D';
-import ThreeBox from './ThreeBox';
+import ThreeBox from './3dComponents/Box/ThreeBox';
 import ThreeClock from './3dComponents/Clock/three-clock.js';
 
 export default class MyNav extends Component {
