@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import '../../MyView.css'
-import initScene from './clock';
 import * as THREE from "three";
+import initScene from './three-code/tetris';
 
 
-export default class ThreeClock extends Component {
+
+export default class ThreeTetris extends Component {
     constructor(props) {
         super(props);
         this.state = {
             scene: new THREE.Scene(),
             renderer: new THREE.WebGLRenderer(),
-            canvasId: "myCanvas"
+            canvasId: "myTetrisCanvas",
+            canvasParentId: "myTetrisCanvasParent"
         };
     }
 
     componentDidMount() {
-        { initScene(this.state.scene, this.state.renderer, this.state.canvasId) };
+        {
+            initScene(this.state.scene,
+                this.state.renderer,
+                this.state.canvasId,
+                this.state.canvasParentId)
+        };
     }
 
     componentWillUnmount() {
@@ -25,7 +32,6 @@ export default class ThreeClock extends Component {
             if (object.type === 'Mesh') {
                 object.geometry.dispose();
                 object.material.dispose();
-                scene.remove(object);
             }
             scene.dispose();
             scene.remove(object);
@@ -38,7 +44,7 @@ export default class ThreeClock extends Component {
 
     render() {
         return (
-            <div  id="3clockView" className="MyView">
+            <div className="MyView" id={this.state.canvasParentId}>
             </div>
         );
     }

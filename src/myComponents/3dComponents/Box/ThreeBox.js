@@ -5,7 +5,7 @@ import Cube from './cube'
 export default class ThreeBox extends Component {
     render() {
         return (
-            <div id="3boxView">
+            <div id="3boxView" className="MyView">
                 <Cube />
             </div>
         );

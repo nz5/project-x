@@ -1,6 +1,25 @@
 .MyView {
   text-align: center;
   background-color: #282c34;
-  min-height: 85vh;
+  min-height: 89vh;
+  max-height: 89vh;
   /* min-height: 70%; */
 }
+
+.GradientBackground {
+  /* background-color: linear-gradient(45deg, red, blue); */
+  text-align: center;
+  background-color: #282c34;
+  min-height: 89vh;
+  max-height: 89vh;
+}
+
+/* .aframescene {
+  height: 500px;
+  width: 500px;
+  } */
+
+  /* a-scene {
+    height: 300px;
+    width: 600px;
+  } */

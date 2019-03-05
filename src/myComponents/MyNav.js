@@ -12,6 +12,7 @@ import MyViewHome from './MyViewHome';
 import MyView3d from './MyView3D';
 import ThreeBox from './3dComponents/Box/ThreeBox';
 import ThreeClock from './3dComponents/Clock/three-clock.js';
+import ThreeTetris from './3dComponents/Tetris/ThreeTetris.js'
 
 export default class MyNav extends Component {
 
@@ -34,17 +35,16 @@ export default class MyNav extends Component {
                                     <NavDropdown.Item href="/3box/">Box</NavDropdown.Item>
                                     <NavDropdown.Item href="/3Clock/">Clock</NavDropdown.Item>
                                     <NavDropdown.Item href="/3d/">Billiards</NavDropdown.Item>
-                                    <NavDropdown.Item href="/3d/">Tetris</NavDropdown.Item>
+                                    <NavDropdown.Item href="/3Tetris/">Tetris</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="#action/3.4">XXX</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </Navbar>
                         <Route path="/" exact component={MyViewHome} />
-                        <Route path="/3d/" component={MyView3d} />
                         <Route path="/3box/" component={ThreeBox} />
                         <Route path="/3Clock/" component={ThreeClock} />
-
+                        <Route path="/3Tetris/" component={ThreeTetris} />
                     </div>
                 </Router>
 
