@@ -30,7 +30,6 @@ const tetriminos = {
 
     tColor: "blue",
     sColor: "red",
-
     colors: ["red", "blue", "yellow", "purple", "green", "orange", "gray"],
     shapes: [
         [   //sShape: red
@@ -251,7 +250,7 @@ class TetObj {
         }
     }
 
-    moveDown(isDropToLowest) {
+    moveDown(isDropToLowest, sceneAlias) {
         tetris.tetriminoMoved = true;
         const temp = [];
         let outOfGrid = false;
@@ -301,7 +300,7 @@ class TetObj {
 
             //if collide or out -> add all pieces to storage and create new tetrimino
             if ((outOfGrid || doesCollide) && (!tetris.gameLost)) {
-                makeRandomTetrimino();
+                makeRandomTetrimino(sceneAlias);
                 addAllPiecesToStorage(this.cubes);
             }
         } while (!outOfGrid && isDropToLowest && !doesCollide);
@@ -335,7 +334,7 @@ function addAllPiecesToStorage(cubes) {
     }
 }
 
-var Keys = {
+const Keys = {
     A: 65,
     Q: 81,
     X: 88,
@@ -364,8 +363,8 @@ function makeRandomTetrimino(scene) {
 }
 
 function createTetrimino(shape, color) {
-    const cubes = new Array();
-    const cubesToReturn = new Array();
+    const cubes = [];
+    const cubesToReturn = [];
     cubes.push(getCube(color));
     cubes.push(getCube(color));
     cubes.push(getCube(color));
@@ -415,26 +414,20 @@ function getCube(color) {
     return mesh;
 }
 
-
 // -----------------------------------------------------------------------------------------------------------------------------
 // ---------------------------------------------------- ADD GRIDS   -----------------------------------------------------------------
 function addGrids(scene) {
-
     const yGrid = getGrid(tetris.xGridDivision, tetris.yGridDivision, tetris.yGridColor);
     const xGrid = getGrid(tetris.xGridDivision, tetris.zGridDivision, tetris.xGridColor);
     const zGrid = getGrid(tetris.zGridDivision, tetris.yGridDivision, tetris.zGridColor);
-
     xGrid.rotation.x = Math.PI / 2;
     zGrid.rotation.y = -Math.PI / 2;
-
     scene.add(yGrid);
     scene.add(xGrid);
     scene.add(zGrid);
-
 }
 
 function getGrid(x, y, color) {
-
     const group = new THREE.Group();
     const material = new THREE.LineBasicMaterial({
         color: color
@@ -459,7 +452,6 @@ function getGrid(x, y, color) {
         const line = new THREE.Line(geometry, material);
         group.add(line);
     }
-
     return group;
 }
 
