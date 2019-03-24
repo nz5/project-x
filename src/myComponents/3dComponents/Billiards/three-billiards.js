@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import '../../MyView.css'
-import Footer from '../../Footer';
-import initScene from './cube';
 import * as THREE from "three";
+import initScene from './billiard'
+import Footer from '../../Footer';
 
 
-
-export default class ThreeBox extends Component {
+export default class ThreeBilliards extends Component {
     constructor(props) {
         super(props);
+        this.bgColor = 0x282c34;
+        this.viewId = '3billiards';
         this.state = {
             scene: new THREE.Scene(),
             renderer: new THREE.WebGLRenderer({ antialias: true }),
-            canvasId: "cubeCanvas"
+            canvasId: "myCanvas",
         };
     }
 
     componentDidMount() {
-        initScene(this.state.scene, this.state.renderer, this.state.canvasId);
+        initScene(this.state.scene, this.state.renderer, this.state.canvasId, this.bgColor, this.viewId);
     }
 
     componentWillUnmount() {
@@ -41,9 +42,10 @@ export default class ThreeBox extends Component {
     render() {
         return (
             <div>
-                <div id="3boxView" />
-                <Footer />
+                <div id={this.viewId} />
+                <Footer/>
             </div>
+
         );
     }
 }

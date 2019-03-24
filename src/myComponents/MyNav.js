@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route} from "react-router-dom";
 import './MyView.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 import brandImage from '../pictures/brand.svg'
 
 import MyViewHome from './MyViewHome';
-import MyView3d from './MyView3D';
 import ThreeBox from './3dComponents/Box/ThreeBox';
 import ThreeClock from './3dComponents/Clock/three-clock.js';
 import ThreeTetris from './3dComponents/Tetris/ThreeTetris.js'
+import ThreeBilliards from './3dComponents/Billiards/three-billiards';
 
 export default class MyNav extends Component {
 
@@ -21,7 +21,7 @@ export default class MyNav extends Component {
             <div>
                 <Router>
                     <div>
-                        <Navbar bg="primary" variant="dark">
+                        <Navbar bg="dark" variant="dark">
                             <Navbar.Brand href="/">
                                 <img src={brandImage}
                                     width="60"
@@ -31,18 +31,23 @@ export default class MyNav extends Component {
                             </Navbar.Brand>
                             <Nav className="mr-auto">
                                 <Nav.Link href="/">Home</Nav.Link>
-                                <NavDropdown title="3D" id="basic-nav-dropdown">
+                                <Nav.Link href="/3box/">Cubes</Nav.Link>
+                                <Nav.Link href="/3Clock/">Clock</Nav.Link>
+                                <Nav.Link href="/3Billiards/">Billiards</Nav.Link>
+                                <Nav.Link href="/3Tetris/">Tetris</Nav.Link>
+                                {/* <NavDropdown title="3D" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="/3box/">Box</NavDropdown.Item>
                                     <NavDropdown.Item href="/3Clock/">Clock</NavDropdown.Item>
-                                    <NavDropdown.Item href="/3d/">Billiards</NavDropdown.Item>
+                                    <NavDropdown.Item href="/3Billiards/">Billiards</NavDropdown.Item>
                                     <NavDropdown.Item href="/3Tetris/">Tetris</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="#action/3.4">XXX</NavDropdown.Item>
-                                </NavDropdown>
+                                </NavDropdown> */}
                             </Nav>
                         </Navbar>
                         <Route path="/" exact component={MyViewHome} />
                         <Route path="/3box/" component={ThreeBox} />
+                        <Route path="/3Billiards/" component={ThreeBilliards} />
                         <Route path="/3Clock/" component={ThreeClock} />
                         <Route path="/3Tetris/" component={ThreeTetris} />
                     </div>

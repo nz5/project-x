@@ -6,20 +6,47 @@
   /* min-height: 70%; */
 }
 
+
+canvas { 
+  display: block;
+}
+
+.buttonBilliard {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+}
 .GradientBackground {
   /* background-color: linear-gradient(45deg, red, blue); */
   text-align: center;
   background-color: #282c34;
+  /* background-color: #333745; */
   min-height: 89vh;
   max-height: 89vh;
 }
 
-/* .aframescene {
-  height: 500px;
-  width: 500px;
-  } */
 
-  /* a-scene {
-    height: 300px;
-    width: 600px;
-  } */
+.FooterBackground {
+  /* background-color: linear-gradient(45deg, red, blue); */
+  text-align: center;
+  background-color: #000000;
+  height: 5cm
+}
+
+.FooterOwner {
+  padding-top: 2cm;
+}
+
+h3{
+  color: darkgoldenrod
+}

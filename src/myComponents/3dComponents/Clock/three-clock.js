@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../MyView.css'
 import initScene from './clock';
 import * as THREE from "three";
+import Footer from '../../Footer';
+
 
 
 export default class ThreeClock extends Component {
@@ -9,13 +11,13 @@ export default class ThreeClock extends Component {
         super(props);
         this.state = {
             scene: new THREE.Scene(),
-            renderer: new THREE.WebGLRenderer(),
+            renderer: new THREE.WebGLRenderer({antialias: true}),
             canvasId: "myCanvas"
         };
     }
 
     componentDidMount() {
-        { initScene(this.state.scene, this.state.renderer, this.state.canvasId) };
+        initScene(this.state.scene, this.state.renderer, this.state.canvasId);
     }
 
     componentWillUnmount() {
@@ -38,7 +40,9 @@ export default class ThreeClock extends Component {
 
     render() {
         return (
-            <div  id="3clockView" className="MyView">
+            <div>
+                <div id="3clockView" />
+                <Footer/>
             </div>
         );
     }

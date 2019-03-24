@@ -14,7 +14,8 @@ const tetris = {
     tetriminoMoved: false,
     manualMode: true,
     gameLost: false,
-    playAgain: false,
+    playAgain: true,
+    createNewTetrimino: false,
     removableItems: [],
     cubesInSceneCounter: 0,
     cubesRemovedCounter: 0,
@@ -293,7 +294,8 @@ class TetObj {
             //if game lost
             if (doesCollide && highestGridLevel) {
                 tetris.gameLost = true;
-                // tetris.playAgain = confirm("play again?");
+                // eslint-disable-next-line no-restricted-globals
+                tetris.playAgain = confirm("play again?");
             } else {
                 highestGridLevel = false;
             }
@@ -301,6 +303,7 @@ class TetObj {
             //if collide or out -> add all pieces to storage and create new tetrimino
             if ((outOfGrid || doesCollide) && (!tetris.gameLost)) {
                 makeRandomTetrimino(sceneAlias);
+                // tetris.createNewTetrimino = true;
                 addAllPiecesToStorage(this.cubes);
             }
         } while (!outOfGrid && isDropToLowest && !doesCollide);

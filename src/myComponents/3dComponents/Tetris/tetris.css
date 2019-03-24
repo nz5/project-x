@@ -1,0 +1,89 @@
+
+canvas { 
+  display: block;
+}
+
+.buttonTetrisAutoMode{
+  background-color: rgb(145, 76, 255);
+  border: none;
+  color: white;
+  position: fixed;
+  bottom: 40vh;
+  right: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+  width: 200px
+  /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(255, 255, 255, 0.19); */
+}
+
+.buttonTetrisManualMode{
+  background-color: rgb(145, 76, 255);
+  border: none;
+  color: white;
+  position: fixed;
+  bottom:30vh;
+  right: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.3s;
+  width: 200px
+}
+
+.buttonCubeInGameCount{
+  /* background-color: rgb(255, 192, 76); */
+  border: none;
+  color: white;
+  position: fixed;
+  bottom:40vh;
+  left: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: auto;
+  opacity: 0.6;
+  transition: 0.3s;
+  width: 200px
+}
+
+.buttonCubeRemovedCount{
+  /* background-color: rgb(255, 192, 76); */
+  border: none;
+  color: white;
+  position: fixed;
+  bottom:30vh;
+  left: 50px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  cursor: auto;
+  opacity: 0.6;
+  transition: 0.3s;
+  width: 200px
+}
+
+.instructionsText{
+  border: none;
+  color: white;
+  position: fixed;
+  bottom:70vh;
+  left: 50px;
+  padding: 15px 32px;
+  /* text-align: center; */
+  text-decoration: none;
+  font-size: 12px;
+  cursor: auto;
+  opacity: 0.6;
+  transition: 0.3s;
+  width: 300px
+}

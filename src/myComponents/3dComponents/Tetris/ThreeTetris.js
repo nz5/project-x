@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
 import '../../MyView.css'
+import './tetris.css'
 import * as THREE from "three";
 import initScene from './three-code/tetris';
-
-
 
 export default class ThreeTetris extends Component {
     constructor(props) {
         super(props);
         this.state = {
             scene: new THREE.Scene(),
-            renderer: new THREE.WebGLRenderer(),
+            renderer: new THREE.WebGLRenderer({ antialias: true }),
             canvasId: "myTetrisCanvas",
             canvasParentId: "myTetrisCanvasParent"
         };
     }
 
     componentDidMount() {
-        {
-            initScene(this.state.scene,
-                this.state.renderer,
-                this.state.canvasId,
-                this.state.canvasParentId)
-        };
+        initScene(this.state.scene,
+            this.state.renderer,
+            this.state.canvasId,
+            this.state.canvasParentId)
+
     }
 
     componentWillUnmount() {
@@ -44,7 +42,9 @@ export default class ThreeTetris extends Component {
 
     render() {
         return (
-            <div className="MyView" id={this.state.canvasParentId}>
+            <div>
+                <div id={this.state.canvasParentId} />
+                {/* <Footer/> */}
             </div>
         );
     }

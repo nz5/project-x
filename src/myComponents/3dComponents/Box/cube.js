@@ -1,53 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import * as THREE from "three";
 import TrackballControls from 'three-trackballcontrols';
 
-
-
-export default class Cube extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      scene: new THREE.Scene(),
-      renderer: new THREE.WebGLRenderer(),
-      canvasId: "cubeCanvas"
-    };
-  }
-
-  componentDidMount() {
-    { initScene(this.state.scene, this.state.renderer, this.state.canvasId) };
-  }
-
-  componentWillUnmount() {
-    const scene = this.state.scene;
-    for (let i = scene.children.length - 1; i >= 0; i--) {
-      const object = scene.children[i];
-      if (object.type === 'Mesh') {
-        object.geometry.dispose();
-        object.material.dispose();
-        scene.remove(object);
-      }
-      scene.dispose();
-      scene.remove(object);
-    }
-
-    const element = document.getElementById(this.state.canvasId);
-    element.parentNode.removeChild(element);
-
-  }
-
-  render() {
-    return (
-      <div className='container'>
-      </div>
-    );
-  }
-}
-
-
-
-function initScene(scene, renderer, canvasId) {
+export default function initScene(scene, renderer, canvasId) {
   var height = window.innerHeight - 200,
     width = window.innerWidth;
   renderer.setSize(width, height); // sets size of render to the screen size
